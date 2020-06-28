@@ -159,3 +159,6 @@ button:active{background-color: #443729;}
     border-radius: 5px;
     font-family: 'Raleway', sans-serif;
 }
+.feature{
+    color: pink;
+}
