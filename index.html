@@ -35,28 +35,27 @@
 
     <div id="results"></div>
 
-    {{!-- Handlebars scripts --}}
     <script id="empty-template" type="text/x-handlebars-template"><div class="no-match">No Mach</div></script>
 
     <script id="apt-template" type="text/x-handlebars-template">
         {{#each apartments}}
         <div class="result">
             <img class="img" src="{{this.img}}" alt="">
-            <div class="l-addr">Address: {{this.address}}</div>
-            <div class="l-price">Price: {{this.price}}$</div>
-            <div class="l-rooms">Number Of Rooms: {{this.rooms}}</div>
-            <div class="features">
+            <div class="l-addr label">Address</div><div class="address">{{this.address}}</div>
+            <div class="l-price label">Price</div><div class="price">{{this.price}}$</div>
+            <div class="l-rooms label">Rooms</div><div class="rooms">{{this.rooms}}</div>
+            <div class="l-features label">Features:</div>
+                <div class="features">
                 {{#each this.features}}
-                    <div class="feature">Features: {{this}}</div>
+                    <div>{{this}}</div>
                 {{/each}}
             </div>
         {{#if immediate}}
-        <div class="l-immediate">
-            Contact: {{this.contactDetails.name}} - {{this.contactDetails.email}}
-        </div>
+        <div class="l-immediate label"></div>
+        <div class="name">Contact{{this.contactDetails.name}} - {{this.contactDetails.email}}</div>
             {{/if}} 
             {{#if parking}}
-          <div class="parking">Parking Available</div>  
+            <div class="l-park label">Parking:</div><div class="parking">Available</div>
             {{/if}}
         </div>
         {{/each}}

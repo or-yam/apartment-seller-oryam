@@ -15,16 +15,9 @@ const findRelevantApts = function (
       a.price >= (minPrice || 0) &&
       a.price <= (maxPrice || a.price) &&
       a.rooms >= (minRooms || 0) &&
-      a.rooms <= (maxRooms || a.rooms)
+      a.rooms <= (maxRooms || a.rooms) &&
+      a.parking === (parking[0].checked || a.parking) &&
+      a.immediate === (immediate[0].checked || a.immediate)
   );
-
-  immediate = !immediate[0].checked; // true when is NOT checked
-  parking = !parking[0].checked; // true when is NOT checked
-  return immediate && parking
-    ? relevantApts
-    : !immediate && parking
-    ? relevantApts.filter((a) => a.immediate)
-    : immediate && !parking
-    ? relevantApts.filter((a) => a.parking)
-    : relevantApts.filter((a) => a.parking).filter((b) => b.immediate);
+  return relevantApts;
 };

@@ -1,6 +1,3 @@
-//You should not be touching this file. This is just your data.
-//You can certainly explore this file to get to know your data.
-
 const apartments = [
   {
     img:

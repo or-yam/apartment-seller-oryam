@@ -21,7 +21,6 @@ $('button').on('click', function () {
 
 const renderApts = function (apartments) {
   $('#results').empty();
-  console.log(apartments); //array of apartments to render
   if (apartments.length === 0) {
     const source = $('#empty-template').html();
     const template = Handlebars.compile(source);
@@ -34,4 +33,4 @@ const renderApts = function (apartments) {
   $('#results').append(templateHTML);
 };
 
-renderApts(apartments); //renders apartments when page loads
+renderApts(apartments);
